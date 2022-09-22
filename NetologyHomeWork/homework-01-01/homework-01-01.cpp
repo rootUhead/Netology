@@ -29,16 +29,16 @@ int main(int argc, const char* argv[]) {
 				out << arr_N[i] << " ";
 			}
 			out << std::endl;
-			delete[] arr_N;
 		}
+		delete[] arr_N;
 		out << size_M << std::endl;
 		if (size_M > 0){
 			for (int i = 1; i < size_M; ++i) {
 				out << arr_M[i] << " ";
 			}
 			out << arr_M[0] << std::endl;
-			delete[] arr_M;
 		}
+		delete[] arr_M;
 		out.close();
 		return 0;
 	}
