@@ -19,7 +19,7 @@ void new_balance(Account &user){
 }
 
 int main(int argc, const char * argv[]) {
-
+	setlocale(LC_ALL, "RUSSIAN");
 	Account user;
 	
 	std::cout << "Введите номер счёта: ";
