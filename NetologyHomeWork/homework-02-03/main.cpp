@@ -30,6 +30,8 @@ void address_print (Address &home){
 
 int main(int argc, const char * argv[]) {
 	
+	setlocale(LC_ALL, "RUSSIAN");
+	
 	Address my, new_my;
 	my.ad_сountry = "Россия";
 	my.ad_city	= "Москва";
