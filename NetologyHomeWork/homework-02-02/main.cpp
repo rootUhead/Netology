@@ -13,13 +13,12 @@ struct Account{
 	double ac_money;
 };
 
-void new_balance(Account &user){
-	std::cout << "Введите новый баланс: ";
-	std::cin >> user.ac_money;
+void new_balance(Account &user, double &new_money){
+	user.ac_money = new_money;
 }
 
 int main(int argc, const char * argv[]) {
-	setlocale(LC_ALL, "RUSSIAN");
+
 	Account user;
 	
 	std::cout << "Введите номер счёта: ";
@@ -28,7 +27,10 @@ int main(int argc, const char * argv[]) {
 	std::cin >> user.ac_user_name;
 	std::cout << "Введите баланс: ";
 	std::cin >> user.ac_money;
-	new_balance(user);
+	double new_money=0;
+	std::cout << "Введите новый баланс: ";
+	std::cin >> new_money;
+	new_balance(user, new_money);
 	std::cout << "Ваш счет: " << user.ac_user_name << ", " << user.ac_number << ", " << user.ac_money << std::endl;
 	
 	return 0;
