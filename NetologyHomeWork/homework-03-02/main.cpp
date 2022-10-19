@@ -10,19 +10,22 @@
 class Counter{
 
 private:
-	int num=1;
+	int num;
 public:
+	Counter(){
+		num=1;
+	};
 	void plus (){
-		this -> num = ++num;
+		++num;
 	}
 	void minus(){
-		this -> num = --num;
+		--num;
 	}
 	void equal(){
 		std::cout << num << std::endl;
 	}
 	void set(int user_num){
-		this -> num = user_num;
+		num = user_num;
 	}
 };
 
