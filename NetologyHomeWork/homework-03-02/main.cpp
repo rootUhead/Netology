@@ -24,8 +24,8 @@ public:
 	void equal(){
 		std::cout << num << std::endl;
 	}
-	void set(int user_num){
-		num = user_num;
+	void set(){
+		std::cin >> num;
 	}
 };
 
@@ -36,10 +36,8 @@ int main(int argc, const char * argv[]) {
 	std::cin >> answer;
 	Counter count;
 	if (answer == "да"){
-		int user_num=0;
 		std::cout << "Введите начальное значение счётчика: ";
-		std::cin >> user_num;
-		count.set(user_num);
+		count.set();
 	}
 	bool flag=true;
 	char action;
