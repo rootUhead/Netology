@@ -12,8 +12,13 @@ class Counter{
 private:
 	int num;
 public:
-	Counter(){
-		num=1;
+	Counter(std::string answer){
+		if (answer == "да"){
+			std::cout << "Введите начальное значение счётчика: ";
+			std::cin >> num;
+		}
+		else
+			num=1;
 	};
 	void plus (){
 		++num;
@@ -34,11 +39,7 @@ int main(int argc, const char * argv[]) {
 	std::cout << "Вы хотите указать начальное значение счётчика? Введите да или нет: ";
 	std::string answer;
 	std::cin >> answer;
-	Counter count;
-	if (answer == "да"){
-		std::cout << "Введите начальное значение счётчика: ";
-		count.set();
-	}
+	Counter count(answer);
 	bool flag=true;
 	char action;
 	while (flag){
