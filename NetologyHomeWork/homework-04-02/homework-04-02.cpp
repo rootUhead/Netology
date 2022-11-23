@@ -1,4 +1,4 @@
-﻿// homework-04-01.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// homework-04-02.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
@@ -32,9 +32,23 @@ public:
 		return City + ", " + Street + ", " + std::to_string(Building) + ", " + std::to_string(Flat) + "\n";
 	}
 
-
 };
 
+void sort(Adress* adress, int size) {
+	bool sort = true;
+	while (sort) {
+		sort = false;
+		for (int i = 0; i < size - 1; ++i) {
+			if (adress[i].get_output_address()[0] > adress[i + 1].get_output_address()[0]) {
+				Adress temp = adress[i];
+				adress[i] = adress[i + 1];
+				adress[i + 1] = temp;
+				sort = true;
+			}
+		}
+	}
+
+}
 
 int main(int argc, const char* argv[]) {
 
@@ -60,6 +74,8 @@ int main(int argc, const char* argv[]) {
 			}
 		}
 		in_data.close();
+		std::cout << "Значение: " << adresses[1].get_output_address()[1] << std::endl;
+		sort(adresses, size);
 		std::ofstream out_data("out.txt");
 		out_data << size << std::endl;
 		for (int i = 0; i < size; ++i) {
@@ -74,7 +90,6 @@ int main(int argc, const char* argv[]) {
 
 	return 0;
 }
-
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
 
