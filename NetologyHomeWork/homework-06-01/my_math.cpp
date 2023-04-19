@@ -1,3 +1,4 @@
+#pragma once
 #include "my_math.h"
 #include <string>
 
@@ -19,10 +20,16 @@ int dev(int a, int b) {
 }
 
 int pow(int a, int b) {
-	int c = a;
-	for (int i = 2; i >= b; b++) {
-		c = c * c;
+	if (b == 0) {
+		return 1;
+	}
+	else
+	{
+		int c = a;
+		for (int i = 1; i < b; i++) {
+			c = c * a;
+		}
+		return c;
 	}
 
-	return c;
 }

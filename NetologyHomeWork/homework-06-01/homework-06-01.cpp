@@ -19,14 +19,19 @@ int main()
         {
         case 1:
             std::cout << a << " плюс " << b << " = " << plus(a, b);
+            break;
         case 2:
             std::cout << a << " минус " << b << " = " << minus(a, b);
+            break;
         case 3:
             std::cout << a << " умножить на " << b << " = " << mult(a, b);
+            break;
         case 4:
             std::cout << a << " разделить на " << b << " = " << dev(a, b);
+            break;
         case 5:
             std::cout << a << " в степени " << b << " = " << pow(a, b);
+            break;
         default:
             break;
         }
